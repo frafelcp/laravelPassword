@@ -12,12 +12,13 @@ class UserController extends Controller
 {
     public function perfil()
     {
-        return view('user.user');
+        $usuarios = User::all();
+        return view('user.user', compact('usuarios'));
     }
     
     public function password()
     {
-        return view('user.password');
+        return view('user.modal');
     }
     
     public function updatePassword(Request $request)
@@ -49,7 +50,7 @@ class UserController extends Controller
             }
             else
             {
-                return redirect('user/password')->with('message', 'Credenciales incorrectas');
+                return redirect('user/modal')->with('message', 'Credenciales incorrectas');
             }
         }
     }

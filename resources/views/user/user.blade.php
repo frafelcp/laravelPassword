@@ -17,8 +17,11 @@
     <h3>Opciones:</h3>
 
     <ul>
+        @foreach($usuarios as $usuario)
         <li><a href="#">Cambiar mi imagen de perfil</a></li>
-        <li><a href="{{url('user/password')}}">Cambiar mi password</a></li>
+        <li><a href="" data-target="#modal-{{$usuario->id}}" data-toggle="modal">Cambiar mi password</a></li>
+        @include('user.modal')
+        @endforeach        
     </ul>
 
 @stop

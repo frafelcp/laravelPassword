@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 //rutas para cambiar contrasena
 Route::get('user/user', 'UserController@perfil');
-Route::get('user/password', 'UserController@password');
+//Route::get('user/password', 'UserController@password');
 Route::post('user/updatepassword', 'UserController@updatePassword');
 
 Auth::routes();
