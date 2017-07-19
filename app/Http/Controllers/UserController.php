@@ -10,6 +10,11 @@ use App\User;
 
 class UserController extends Controller
 {
+    public function perfil()
+    {
+        return view('user.user');
+    }
+    
     public function password()
     {
         return view('user.password');
@@ -40,7 +45,7 @@ class UserController extends Controller
                 $user = new User;
                 $user->where('email', '=', Auth::user()->email)
                      ->update(['password' => bcrypt($request->password)]);
-                return redirect('user/password')->with('status', 'Password cambiado con éxito');
+                return redirect('user/user')->with('status', 'Password cambiado con éxito');
             }
             else
             {
